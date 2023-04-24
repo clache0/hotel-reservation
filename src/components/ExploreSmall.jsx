@@ -5,7 +5,7 @@ export default function ExploreSmall(props) {
     return (
         <div className="center">
             <img 
-                src={`src/images/explore/${props.image}.jpg`}
+                src={props.image}
                 className="explore-small-image"
             />
             <div className="explore-small">

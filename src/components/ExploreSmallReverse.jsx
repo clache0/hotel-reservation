@@ -19,7 +19,7 @@ export default function ExploreSmallReverse(props) {
                 </div>
             </div>
             <img 
-                src={`src/images/explore/${props.image}.jpg`}
+                src={props.image}
                 className="explore-small-image"
             />
         </div>

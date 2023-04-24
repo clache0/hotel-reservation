@@ -10,9 +10,9 @@ export default function SearchBar() {
 
     const [openDest, setOpenDest] = useState(false)
     const [openDatePicker, setOpenDatePicker] = useState(false)
-    const [startDate, setStartDate] = useState(new Date())
+    const [startDate, setStartDate] = useState(null)
     const [endDate, setEndDate] = useState(null)
-    const [openGuest, setOpenGuest] = useState(true)
+    const [openGuest, setOpenGuest] = useState(false)
 
     const [numAdults, setNumAdults] = useState(0) // count num of adults in reservation
     const [numChildren, setNumChildren] = useState(0) // count num of children in reservation

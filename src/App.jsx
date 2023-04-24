@@ -7,16 +7,18 @@ import Offer from './components/Offer'
 import Explore from './components/Explore'
 
 function App() {
-    const initialCarouselState = {
-        offset: 0,
-        desired: 0,
-        active: 0,
+    const styles = {
+        main: {
+            backgroundImage: "url(https://i.imgur.com/bYS5foa.jpg)",
+        }
     }
 
     return (
         <div className="app-container">
             <Header />
-            <main className='center-horizontal'>
+            <main className='center-horizontal'
+                style={styles.main}
+            >
                 <SearchBar />
             </main>
             <PopularOffers />

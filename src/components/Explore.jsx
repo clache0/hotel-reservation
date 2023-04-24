@@ -9,12 +9,20 @@ export default function Explore(props) {
     const explore1 = exploreData[1]
     const explore2 = exploreData[2]
 
+    const styles = {
+        exploreLarge: {
+            backgroundImage: `url(${exploreData[0].image})`,
+        }
+    }
+
     return (
         <div className="explore-container">
             <h2 className="section-title" >Explore Destinations</h2>
 
             <div className="grid-container">
-                <div className="grid-item item1 explore-large" >
+                <div className="grid-item item1 explore-large" 
+                    style={styles.exploreLarge}
+                >
                     <div className="explore-large-text">
                         <p>
                             {explore0.description}

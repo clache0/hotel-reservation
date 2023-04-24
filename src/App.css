@@ -32,7 +32,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: clamp(320px, 100%, 1920px);
+    width: 100%;
+    min-width: 320px;
 
     box-shadow: 0 3px 7.5px rgba(0, 0, 0, 0.1);
     height: 15vh;
@@ -43,7 +44,7 @@ header {
 
 main {
     z-index: 1;
-    background-image: url(src/images/modern-home1.jpg);
+    /* background-image: url(src/images/modern-home1.jpg); */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -197,7 +198,8 @@ main {
 }
 
 footer {
-    width: clamp(320px, 100%, 1920px);
+    width: 100%;
+    min-width: 320px;
     height: 8vh;
     /* border-top: 1px solid #767676; */
     font-size: 0.8em;
@@ -520,7 +522,6 @@ footer {
 }
 
 .explore-large {
-    background-image: url("src/images/explore/amsterdam1.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;

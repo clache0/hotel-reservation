@@ -1,7 +1,7 @@
 
 export default function Offer(props) {
     const styles = {
-        backgroundImage: `url(src/images/offers/${props.image}.jpg)`,
+        backgroundImage: `url(${props.image})`,
         transform: `translate(-${props.activeOfferIndex * 100}%)`
     }
 
