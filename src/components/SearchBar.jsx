@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import DestDropdown from "./DestDropdown"
-import { Children, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
 import GuestDropdown from "./GuestDropdown";
@@ -26,8 +26,37 @@ export default function SearchBar() {
     const [infantsDisable, setInfantsDisable] = useState(true)
     const [petsDisable, setPetsDisable] = useState(true)
 
+    const destRef = useRef(null) // destination drop down
+    const datePickerRef = useRef(null) // date picker drop down
+    const guestRef = useRef(null) // guest selector drop down
+
     // -----------------------------------------------------------------
     // ----------------------------useEffect----------------------------
+
+    // set up event listener for clicking outside of dropdowns
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if ((destRef.current && !destRef.current.contains(event.target)) || 
+            datePickerRef.current && !datePickerRef.current.contains(event.target) ||
+            guestRef.current && !guestRef.current.contains(event.target)
+            ) {
+                closeDropdowns()
+            }
+        }
+
+        if (openDest || openDatePicker || openGuest) {
+            // set delay to adding event listener bc card would close before opening
+            setTimeout(() => {
+                window.addEventListener("click", handleClickOutside)
+            }, 200) 
+        }
+
+        return () => {
+            window.removeEventListener("click", handleClickOutside)
+        }
+    }, [openDest, openDatePicker, openGuest])
+    
+    // calculate total number of guest from adults and children
     useEffect(() => {
         setTotalResNum(numAdults+numChildren)
     }, [numAdults, numChildren])
@@ -100,6 +129,12 @@ export default function SearchBar() {
         setOpenGuest(!openGuest)
     }
 
+    function closeDropdowns() {
+        setOpenDest(false)
+        setOpenDatePicker(false)
+        setOpenGuest(false)
+    }
+
     function incrementNum(type) {
         switch (type) {
             case "Adults":
@@ -155,7 +190,13 @@ export default function SearchBar() {
                 "dropdown-container active" : 
                 "dropdown-container"}
             >
-                { openDest && <DestDropdown/> } 
+                { 
+                    openDest && 
+                    <DestDropdown closeDropdowns={closeDropdowns}
+                        openDest={openDest}
+                        destRef={destRef}
+                    /> 
+                } 
             </div>
 
             <p 
@@ -171,7 +212,9 @@ export default function SearchBar() {
             >
                 {
                     openDatePicker &&
-                    <div className="date-picker-container">
+                    <div className="date-picker-container"
+                        ref={datePickerRef}
+                    >
                         <p className="date-picker-title">Check In - Check Out</p>
                         <DatePicker 
                             selected={startDate}
@@ -225,6 +268,7 @@ export default function SearchBar() {
                         childrenDisable = {childrenDisable}
                         infantsDisable = {infantsDisable}
                         petsDisable = {petsDisable}
+                        guestRef={guestRef}
                     /> 
                 } 
             </div>

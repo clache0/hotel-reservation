@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
+import { useRef, useEffect } from "react"
 
 export default function DestDropdown(props) {
     return (
-        <div className="dest-dropdown">
+        <div className="dest-dropdown" ref={props.destRef}>
             <input 
                 type="text" 
                 placeholder="Destination"

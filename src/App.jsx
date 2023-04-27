@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
 import PopularOffers from './components/PopularOffers'
-import Offer from './components/Offer'
 import Explore from './components/Explore'
 
 function App() {

@@ -3,7 +3,7 @@ import GuestSection from "./GuestSection"
 
 export default function GuestDropdown(props) {
     return (
-        <div className="guest-dropdown">
+        <div className="guest-dropdown" ref={props.guestRef}>
 
             <GuestSection 
                 type="Adults"
