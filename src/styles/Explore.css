@@ -1,6 +1,6 @@
 .explore-container {
     position: absolute;
-    top: 300vh;
+    top: 280vh;
     width: clamp(320px, 100%, 1920px);
     height: 100vh;
 
@@ -15,7 +15,6 @@
 
 .explore-title {
     background-color: #767676;
-    margin: 0;
 }
 
 .grid-container {
