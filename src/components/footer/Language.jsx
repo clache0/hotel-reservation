@@ -1,4 +1,4 @@
-import LanguageData from "../../assets/LanguageData"
+import LanguageData from "../../assets/languageData"
 import { useRef, useEffect } from "react"
 
 export default function Language(props) {

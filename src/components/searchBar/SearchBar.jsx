@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"
 import GuestDropdown from "./GuestDropdown";
+import "../../styles/SearchBar.css"
 
 export default function SearchBar() {
 
@@ -25,6 +26,9 @@ export default function SearchBar() {
     const [childrenDisable, setChildrenDisable] = useState(true)
     const [infantsDisable, setInfantsDisable] = useState(true)
     const [petsDisable, setPetsDisable] = useState(true)
+
+    const [destination, setDestination] = useState("Anywhere") // search bar destination string
+    const [searchBarActive, setSearchBarActive] = useState(false) // search bar has been clicked
 
     const destRef = useRef(null) // destination drop down
     const datePickerRef = useRef(null) // date picker drop down
@@ -106,15 +110,17 @@ export default function SearchBar() {
     // -----------------------------------------------------------------
     // ----------------------------functions----------------------------
     function handleOpenDest() {
-        setOpenDest(!openDest) // toggle destination drop down
+        setOpenDest(true) // toggle destination drop down
         setOpenDatePicker(false) // close other drop down if open
         setOpenGuest(false)
+        setSearchBarActive(true)
     }
 
     function handleOpenDatePicker() {
         setOpenDest(false) // close other drop down if open
-        setOpenDatePicker(!openDatePicker) // toggle date picker
+        setOpenDatePicker(true) // toggle date picker
         setOpenGuest(false)
+        setSearchBarActive(true)
     }
 
     function handleChangeDate(dates) {
@@ -126,13 +132,15 @@ export default function SearchBar() {
     function handleOpenGuest() {
         setOpenDest(false)
         setOpenDatePicker(false)
-        setOpenGuest(!openGuest)
+        setOpenGuest(true)
+        setSearchBarActive(true)
     }
 
     function closeDropdowns() {
         setOpenDest(false)
         setOpenDatePicker(false)
         setOpenGuest(false)
+        setSearchBarActive(false)
     }
 
     function incrementNum(type) {
@@ -182,10 +190,16 @@ export default function SearchBar() {
         }
     }
 
+    function handleDestinationChange(newDestination) {
+        setDestination(newDestination)
+    }
+
     // --------------------------------------------------------------
     // ----------------------------return----------------------------
     return (
-        <div className="search-bar">
+        <div className={`search-bar 
+            ${searchBarActive ? "active" : ""}`}>
+
             <div className={openDest ? 
                 "dropdown-container active" : 
                 "dropdown-container"}
@@ -195,6 +209,8 @@ export default function SearchBar() {
                     <DestDropdown closeDropdowns={closeDropdowns}
                         openDest={openDest}
                         destRef={destRef}
+                        destination={destination}
+                        handleDestinationChange={handleDestinationChange}
                     /> 
                 } 
             </div>
@@ -203,7 +219,7 @@ export default function SearchBar() {
                 className="search-bar--field"
                 onClick={handleOpenDest} 
             >
-                Anywhere
+                {destination ? destination : "Anywhere"}
             </p>
 
             <div className={openDatePicker ? 
@@ -240,13 +256,11 @@ export default function SearchBar() {
                 `${startDate.toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
-                    // year: "numeric",
                 })}
                 to 
                 ${endDate.toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
-                    // year: "numeric",
                 })}` : 
                 "Any week"}
             </p>

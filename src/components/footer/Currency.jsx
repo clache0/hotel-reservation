@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react"
-import CurrencyData from "../../assets/CurrencyData"
+import CurrencyData from "../../assets/currencyData"
 
 export default function Currency(props) {
     const currencyRef = useRef(null)

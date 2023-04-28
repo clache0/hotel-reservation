@@ -3,6 +3,7 @@ import exploreData from "../../assets/exploreData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import ExploreSmallReverse from "./ExploreSmallReverse";
+import "../../styles/Explore.css"
 
 export default function Explore(props) {
     const explore0 = exploreData[0]

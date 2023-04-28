@@ -12,7 +12,7 @@ export default function Footer() {
     const [showTerms, setShowTerms] = useState(false)
     const [showPrivacy, setShowPrivacy] = useState(false)
     const [showLanguage, setShowLanguage] = useState(false)
-    const [showCurrency, setShowCurrency] = useState(true)
+    const [showCurrency, setShowCurrency] = useState(false)
 
     const [language, setLanguage] = useState("English") // active language
     const [currency, setCurrency] = useState("USD") // active currency
