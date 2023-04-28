@@ -1,9 +1,9 @@
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/footer/Footer'
-import SearchBar from './components/SearchBar'
+import SearchBar from './components/searchBar/SearchBar'
 import PopularOffers from './components/PopularOffers'
-import Explore from './components/Explore'
+import Explore from './components/explore/Explore'
 
 function App() {
     const styles = {

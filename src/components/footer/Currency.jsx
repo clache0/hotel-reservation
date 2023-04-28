@@ -1,17 +1,17 @@
-import LanguageData from "../../assets/LanguageData"
 import { useRef, useEffect } from "react"
+import CurrencyData from "../../assets/CurrencyData"
 
-export default function Language(props) {
-    const languageRef = useRef(null)
+export default function Currency(props) {
+    const currencyRef = useRef(null)
 
-    // map languages to buttons
-    const languageButtons = LanguageData.map((language, index) => {
+    // map currencys to buttons
+    const currencyButtons = CurrencyData.map((currency, index) => {
         return (
             <div className="language-button"
-                onClick={() => props.handleLanguage(language)}
+                onClick={() => props.handleCurrency(currency)}
                 key={index}
             >
-                <h5 className="language-text">{language}</h5>
+                <h5 className="language-text">{currency}</h5>
             </div>
         )
     })
@@ -19,8 +19,8 @@ export default function Language(props) {
     // set up event listener for clicking outside of dropdowns
     useEffect(() => {
         function handleClickOutside(event) {
-            if ((languageRef.current && !languageRef.current.contains(event.target))) {
-                props.toggleLanguage()
+            if ((currencyRef.current && !currencyRef.current.contains(event.target))) {
+                props.toggleCurrency()
             }
         }
 
@@ -32,14 +32,14 @@ export default function Language(props) {
             clearTimeout(timeoutId)
             window.removeEventListener("click", handleClickOutside)
         }
-    }, [props.showLanguage])
+    }, [props.showCurrency])
 
     return (
         <div className="language">
-            <div className="language-container" ref={languageRef}>
-                <h3 className="language-title">Languages</h3>
+            <div className="language-container" ref={currencyRef}>
+                <h3 className="language-title">Currencys</h3>
                 <div className="language-grid-container">
-                    {languageButtons}
+                    {currencyButtons}
                 </div>
 
             </div>

@@ -1,5 +1,5 @@
 import ExploreSmall from "./ExploreSmall";
-import exploreData from "../assets/exploreData";
+import exploreData from "../../assets/exploreData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import ExploreSmallReverse from "./ExploreSmallReverse";

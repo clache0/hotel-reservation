@@ -6,13 +6,16 @@ import "../../styles/Footer.css"
 import Privacy from "./Privacy"
 import PrivacySlider from "./PrivacySlider"
 import Language from "./Language"
+import Currency from "./Currency"
 
 export default function Footer() {
     const [showTerms, setShowTerms] = useState(false)
     const [showPrivacy, setShowPrivacy] = useState(false)
-    const [showLanguage, setShowLanguage] = useState(true)
+    const [showLanguage, setShowLanguage] = useState(false)
+    const [showCurrency, setShowCurrency] = useState(true)
 
-    const [language, setLanguage] = useState("English")
+    const [language, setLanguage] = useState("English") // active language
+    const [currency, setCurrency] = useState("USD") // active currency
 
     function toggleTerms() {
         setShowTerms(!showTerms)
@@ -26,10 +29,20 @@ export default function Footer() {
         setShowLanguage(!showLanguage)
     }
 
+    function toggleCurrency() {
+        setShowCurrency(!showCurrency)
+    }
+
     // change footer language and close pop up
     function handleLanguage(inputLanguage) {
         setLanguage(inputLanguage)
         setShowLanguage(false)
+    }
+
+    // change footer currency and close pop up
+    function handleCurrency(inputCurrency) {
+        setCurrency(inputCurrency)
+        setShowCurrency(false)
     }
 
     return (
@@ -46,14 +59,8 @@ export default function Footer() {
                 <PrivacySlider />
             </div>
 
-            <div className="footer-options center">
-                <FontAwesomeIcon icon={faGlobe} />
-                <p className="footer-item-right"
-                    onClick={toggleLanguage}
-                >{language}</p>
-                <p className="footer-item-right">$ USD</p>
-                <p className="footer-item-right">Support & Resources</p>
-            </div>
+            <div className={`dropdown-container 
+                ${showTerms ? "active" : ""}`}>
             {
                 showTerms &&
                 <Terms
@@ -61,6 +68,10 @@ export default function Footer() {
                 toggleTerms={toggleTerms}
                 />
             }
+            </div>
+
+            <div className={`dropdown-container 
+                ${showPrivacy ? "active" : ""}`}>
             {
                 showPrivacy &&
                 <Privacy
@@ -68,14 +79,51 @@ export default function Footer() {
                 togglePrivacy={togglePrivacy}
                 />
             }
+            </div>
+
+            <div className={`dropdown-container 
+                ${showLanguage ? "active" : ""}`}>
             {
                 showLanguage &&
                 <Language
+                language={language}
                 showLanguage={showLanguage}
                 toggleLanguage={toggleLanguage}
                 handleLanguage={handleLanguage}
                 />
             }
+            </div>
+
+            <div className={`dropdown-container 
+                ${showCurrency ? "active" : ""}`}>
+            {
+                showCurrency &&
+                <Currency
+                currency={currency}
+                showCurrency={showCurrency}
+                toggleCurrency={toggleCurrency}
+                handleCurrency={handleCurrency}
+                />
+            }
+            </div>
+
+            <div className="footer-options center">
+                <FontAwesomeIcon icon={faGlobe} />
+
+                <p className="footer-item-right"
+                    onClick={toggleLanguage}
+                >{language}</p>
+
+                <p className="footer-item-right"
+                    onClick={toggleCurrency}
+                >{currency}</p>
+
+                <p className="footer-item-right">Support & Resources</p>
+            </div>
+
+
+
+
         </footer>
     )
 }
