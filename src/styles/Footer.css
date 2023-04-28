@@ -21,8 +21,10 @@ footer {
 
 .footer-pop-up {
     position: fixed;
-    top: 40%;
-    left: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     width: 50%;
     border-radius: 1rem;
     padding: 3rem;
@@ -79,11 +81,50 @@ footer {
 
 .language {
     position: fixed;
-    top: 40%;
-    left: 25%;
-    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 1rem;
+    padding: 1rem 0;
+    background-color: #FFFFFF;
+    /* div helps to hide the border radius for the scroll bar */
+}
+
+.language-container {
+
+    height: 300px;
     padding: 3rem;
     color: #484848;
-    background-color: rgba(255, 255, 255, 0.9);  
+    overflow: auto;
+    /* background-color: rgba(255, 255, 255, 0.9);   */
+    background-color: #FFFFFF;
+}
+
+.language-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.language-button {
+    width: 100px;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.language-button:hover {
+    background-color: #F5F5F5;
+}
+
+.language-title {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 1rem;
+}
+
+.language-text {
+    font-size: 0.8rem;
+    margin: 0;
 }

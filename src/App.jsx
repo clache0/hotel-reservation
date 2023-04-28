@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header'
-import Footer from './components/Footer'
+import Footer from './components/footer/Footer'
 import SearchBar from './components/SearchBar'
 import PopularOffers from './components/PopularOffers'
 import Explore from './components/Explore'

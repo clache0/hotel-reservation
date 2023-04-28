@@ -1,16 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
-import Terms from "./footer/Terms"
-import "../styles/Footer.css"
-import Privacy from "./footer/Privacy"
-import PrivacySlider from "./footer/PrivacySlider"
-import Language from "./footer/Language"
+import Terms from "./Terms"
+import "../../styles/Footer.css"
+import Privacy from "./Privacy"
+import PrivacySlider from "./PrivacySlider"
+import Language from "./Language"
 
 export default function Footer() {
     const [showTerms, setShowTerms] = useState(false)
     const [showPrivacy, setShowPrivacy] = useState(false)
     const [showLanguage, setShowLanguage] = useState(true)
+
+    const [language, setLanguage] = useState("English")
 
     function toggleTerms() {
         setShowTerms(!showTerms)
@@ -22,6 +24,12 @@ export default function Footer() {
 
     function toggleLanguage() {
         setShowLanguage(!showLanguage)
+    }
+
+    // change footer language and close pop up
+    function handleLanguage(inputLanguage) {
+        setLanguage(inputLanguage)
+        setShowLanguage(false)
     }
 
     return (
@@ -40,7 +48,9 @@ export default function Footer() {
 
             <div className="footer-options center">
                 <FontAwesomeIcon icon={faGlobe} />
-                <p className="footer-item-right">English</p>
+                <p className="footer-item-right"
+                    onClick={toggleLanguage}
+                >{language}</p>
                 <p className="footer-item-right">$ USD</p>
                 <p className="footer-item-right">Support & Resources</p>
             </div>
@@ -63,6 +73,7 @@ export default function Footer() {
                 <Language
                 showLanguage={showLanguage}
                 toggleLanguage={toggleLanguage}
+                handleLanguage={handleLanguage}
                 />
             }
         </footer>
