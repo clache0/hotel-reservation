@@ -7,7 +7,7 @@ export default function Offer(props) {
 
     return (
         <div 
-            className="offer center" 
+            className="offer" 
             style={styles}
         >
             <div className="offer--container">
@@ -17,7 +17,7 @@ export default function Offer(props) {
 
                 <h3 className="offer--description">{props.description}</h3>
 
-                <div className="offer--view center">
+                <div className="offer--view">
                     <p className="offer--view-text">View Offer</p>
                 </div>
             </div>

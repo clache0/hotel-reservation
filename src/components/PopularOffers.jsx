@@ -3,6 +3,7 @@ import Offer from "./Offer"
 import offerData from "../assets/offerData"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import "../styles/PopularOffers.css"
 
 export default function PopularOffers() {
     const [activeOfferIndex, setActiveOffer] = useState(0)

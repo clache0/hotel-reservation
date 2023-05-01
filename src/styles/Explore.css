@@ -2,11 +2,11 @@
     position: absolute;
     top: 280vh;
     width: clamp(320px, 100%, 1920px);
-    height: 100vh;
+    /* height: 100vh; */
 
     margin: 0 auto;
     padding: 0 40px;
-    padding-bottom: 20vh;
+    padding-bottom: 25vh;
     box-shadow: 5px 0px 3px -3px rgba(0, 0, 0, 0.1),
                 -5px 0px 3px -3px rgba(0, 0, 0, 0.1);
 
