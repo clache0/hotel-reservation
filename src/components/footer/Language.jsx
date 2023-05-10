@@ -1,11 +1,11 @@
-import LanguageData from "../../assets/languageData"
+import languageData from "../../assets/languageData"
 import { useRef, useEffect } from "react"
 
 export default function Language(props) {
     const languageRef = useRef(null)
 
     // map languages to buttons
-    const languageButtons = LanguageData.map((language, index) => {
+    const languageButtons = languageData.map((language, index) => {
         return (
             <div className="language-button"
                 onClick={() => props.handleLanguage(language)}
