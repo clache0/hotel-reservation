@@ -1,31 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
-import Footer from './components/footer/Footer'
-import SearchBar from './components/searchBar/SearchBar'
-import PopularOffers from './components/PopularOffers'
-import Explore from './components/explore/Explore'
-import JoinMember from './components/JoinMember'
+
+import Home from './Home'
+import Layout from './Layout'
 
 function App() {
-    const styles = {
-        main: {
-            backgroundImage: "url(https://i.imgur.com/bYS5foa.jpg)",
-        }
-    }
-
     return (
-        <div className="app-container">
-            <Header />
-            <main className='center-horizontal'
-                style={styles.main}
-            >
-                <SearchBar />
-            </main>
-            <PopularOffers />
-            <JoinMember />
-            <Explore />
-            <Footer />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Layout />}>
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
