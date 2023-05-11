@@ -5,7 +5,7 @@
 
     color: #484848;
     box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: #ffffff;
     transition: transform 0.3s ease-out;
 
     padding: 10px 20px;
@@ -21,6 +21,7 @@
 
 .search-bar.active {
     transform: scale(1.1);
+    background-color: #ffffff;
 }
 
 .search-bar:hover {
@@ -42,7 +43,6 @@
 .search-bar--field {
     margin: auto;
     padding: 5px;
-    /* padding-right: 15px; */
     min-width: 150px;
     text-align: center;
     border-right: 1px solid #ccc;
@@ -68,7 +68,7 @@
 
     font-size: 1rem;
 
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 3px 7.5px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -106,7 +106,7 @@
 }
 
 .curr-loc:hover {
-    background-color: lightgrey;
+    background-color: #f7f7f7;
 }
 
 .popular-dest {
@@ -127,7 +127,7 @@
 }
 
 .popular-dest >li:hover {
-    background-color: lightgrey;
+    background-color: #f7f7f7;
 }
 
 .date-picker-container {
