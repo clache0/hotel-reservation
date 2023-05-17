@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export default function Offer(props) {
     const styles = {
@@ -17,9 +18,9 @@ export default function Offer(props) {
 
                 <h3 className="offer--description">{props.description}</h3>
 
-                <div className="offer--view">
+                <Link to="under-construction" className="offer--view">
                     <p className="offer--view-text">View Offer</p>
-                </div>
+                </Link>
             </div>
         </div>
     )

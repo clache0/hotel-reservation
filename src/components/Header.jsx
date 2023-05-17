@@ -16,9 +16,9 @@ export default function Header() {
 
             <div className="profile-container">
                 <p className="profile-description">Host your home</p>
-                <div className="profile-button">
+                <Link to="/join-now" className="profile-button">
                     <FontAwesomeIcon icon={faUser} />                    
-                </div>
+                </Link>
             </div>
         </header>
     )

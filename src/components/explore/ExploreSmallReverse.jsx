@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 
 export default function ExploreSmallReverse(props) {
     return (
@@ -10,13 +11,13 @@ export default function ExploreSmallReverse(props) {
                 </p>
                 <div className="underline" style={{width:"50%"}}></div>
                 <h2 className="explore-location" >{props.location}</h2>
-                <div className="explore-button center" >
+                <Link to="under-construction" className="explore-button center" >
                     <p style={{marginRight: "10px"}}>Explore</p>
                     <FontAwesomeIcon 
                         icon={faArrowRight}
                         className="explore-button-arrow"
                     />
-                </div>
+                </Link>
             </div>
             <img 
                 src={props.image}
