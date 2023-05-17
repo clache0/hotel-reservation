@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     const style = {
@@ -8,10 +9,10 @@ export default function Header() {
     }
     return (
         <header>
-            <div className='title-container'>
+            <Link to="/" className='title-container'>
                 <FontAwesomeIcon icon={faHouse} className='title-icon' />
                 <h1 className="title-name">bnb reservations</h1>
-            </div>
+            </Link>
 
             <div className="profile-container">
                 <p className="profile-description">Host your home</p>

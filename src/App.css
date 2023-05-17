@@ -3,6 +3,12 @@
     font-family: Montserrat, sans-serif;
 }
 
+:root {
+    --header-height: 150px;
+
+    --light-text: #767676
+}
+
 /* colors
     blue: #5B51D8
     lighter blue: #A4B8EE
@@ -40,15 +46,12 @@ header {
     min-width: 320px;
 
     box-shadow: 0 3px 7.5px rgba(0, 0, 0, 0.1);
-    height: 15vh;
+    height: var(--header-height);
     z-index: 2;
-    /* position: relative; */
-    /* margin-bottom: 10px; */
 }
 
 main {
     z-index: 1;
-    /* background-image: url(src/images/modern-home1.jpg); */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -97,8 +100,9 @@ main {
     border-radius: 0.8rem;
     cursor: pointer;
 
+    text-decoration: none;
+    color: inherit;
     /* border: 1px solid red; */
-
 }
 
 .title-icon {
@@ -168,4 +172,47 @@ main {
 .dropdown-container.active {
     opacity: 1;
     transition: all 0.5s ease-out;
+}
+
+.page-under-container {
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    margin: 0;
+
+    color: #484848;
+    background-color: #F5F5F5;
+}
+
+.page-under-title {
+    font-size: 2rem;
+    font-weight: 600;
+    transform: translateY(-150px);
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    transform: translateY(var(--header-height));
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: clamp(320px, 100%, 1920px);
+    margin: auto;
+    padding: 1rem;
+
+    color: #767676;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+.back-button-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
 }

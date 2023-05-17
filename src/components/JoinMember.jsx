@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../styles/JoinMember.css"
 
 export default function JoinMember() {
@@ -12,13 +13,13 @@ export default function JoinMember() {
             </p>
 
             <div className="join-member-container">
-                <div className="join-member-button center">
+                <Link to="/join-now" className="join-member-button center">
                     <h3 className="join-member-button-title">Join Now</h3>
-                </div>
+                </Link>
 
-                <div className="join-member-button center sign-up-button">
+                <Link to="/join-now" className="join-member-button center sign-up-button">
                     <h3 className="join-member-button-title">Sign In</h3>
-                </div>
+                </Link>
             </div>
         </div>
     )
