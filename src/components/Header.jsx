@@ -15,7 +15,10 @@ export default function Header() {
             </Link>
 
             <div className="profile-container">
-                <p className="profile-description">Host your home</p>
+                <Link to="/under-construction" className="profile-description">
+                    Host your home
+                </Link>
+                
                 <Link to="/join-now" className="profile-button">
                     <FontAwesomeIcon icon={faUser} />                    
                 </Link>

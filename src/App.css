@@ -135,9 +135,11 @@ main {
     font-size: 0.8em;
     font-weight: 500;
     margin-right: 5px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     padding: 0.6rem;
     cursor: pointer;
+    text-decoration: none;
+    color: #484848;
 }
 
 .profile-description:is(:hover, :focus) {

@@ -8,7 +8,7 @@ import JoinMember from './components/JoinMember'
 function Home() {
     const styles = {
         main: {
-            backgroundImage: "url(https://i.imgur.com/bYS5foa.jpg)",
+            backgroundImage: "url(https://i.imgur.com/FU5CQgS.jpg)",
         }
     }
 
