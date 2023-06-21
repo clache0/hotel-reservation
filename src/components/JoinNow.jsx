@@ -43,7 +43,7 @@ export default function JoinNow(props) {
         <div className="join-now">
             <Back />
 
-            <img src="https://i.imgur.com/bYS5foa.jpg" alt="" 
+            <img src="https://i.imgur.com/FU5CQgS.jpg" alt="" 
                 className="join-now-image"
             />
 
