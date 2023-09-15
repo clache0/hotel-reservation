@@ -15,7 +15,7 @@ export default function Header() {
             </Link>
 
             <div className="profile-container">
-                <Link to="/under-construction" className="profile-description">
+                <Link to="/host" className="profile-description">
                     Host your home
                 </Link>
                 

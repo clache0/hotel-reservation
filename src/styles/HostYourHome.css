@@ -1,0 +1,145 @@
+.host-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--prim-dark);
+    padding-bottom: 150px;
+    width: clamp(320px, 100%, 1200px);
+    margin: auto;
+
+    border: 1px solid red;
+}
+
+.host-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0.2rem;
+}
+
+.host-title-padding {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+
+.host-total-earnings {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.host-subtext {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.num-nights {
+    margin-right: 0.2rem;
+    font-weight: 500;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.host-container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--prim-dark);
+    height: 800px;
+
+    /* border: 1px solid blue; */
+}
+
+.host-image-1 {
+    width: clamp(320px, 100%, 1200px);
+    height: 400px;
+    object-fit: cover;
+}
+
+.host-subcontainer-1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.host-subcontainer-2 {
+    margin-right: 1rem;
+}
+
+.host-subtitle {
+    color: #000000;
+    font-weight: 600;
+}
+
+.host-text {
+    margin: 0.1rem;
+    font-size: 0.9rem;
+    color: var(--sec-light);
+}
+
+.host-cover-container {
+    padding: 0rem 5rem;
+    /* border: solid 1px red; */
+}
+
+.host-cover-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.host-title-subtext {
+    margin: 0;
+}
+
+.host-cover-entry-container {
+    padding: 1rem 0rem;
+    border-bottom: solid 1px var(--sec-light);
+}
+
+.table-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "col1 col2 col3";
+}
+
+.col1 {
+    grid-area: col1;
+}
+
+.col2 {
+    grid-area: col2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col3 {
+    grid-area: col3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check {
+    color: green;
+}
+
+.x {
+    color: red;
+}
+
+.host-cover-entry-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.host-cover-entry-description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--sec-light);
+}

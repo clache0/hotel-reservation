@@ -31,7 +31,7 @@ export default function Explore(props) {
                         </p>
                         <div className="underline" style={{width:"50%"}}></div>
                         <h2 className="explore-location" >{explore0.location}</h2>
-                        <Link to="under-construction" className="explore-button center" >
+                        <Link to="/under-construction" className="explore-button center" >
                             <p style={{marginRight: "10px"}}>Explore</p>
                             <FontAwesomeIcon 
                                 icon={faArrowRight}

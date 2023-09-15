@@ -6,7 +6,9 @@
 :root {
     --header-height: 150px;
 
-    --light-text: #767676
+    --prim-color: #5B51D8;
+    --prim-dark: #484848;
+    --sec-light: #767676;
 }
 
 /* colors
@@ -217,4 +219,8 @@ main {
     font-size: 1rem;
     font-weight: 400;
     margin-left: 0.5rem;
+}
+
+.prim-color {
+    color: var(--prim-color);
 }
